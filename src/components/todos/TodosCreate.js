@@ -9,7 +9,7 @@ function TodosCreate(props) {
   const handleSubmit = e => {
     e.preventDefault();
     setId(id + 1);
-    props.setTodos({ value, id });
+    props.setTodos({ value, id, completed: false });
   };
   return (
     <form onSubmit={handleSubmit}>

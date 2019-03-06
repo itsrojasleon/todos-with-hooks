@@ -1,7 +1,7 @@
 {
   "name": "todos-with-hooks",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create your todos!",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {

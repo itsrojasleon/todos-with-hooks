@@ -1,17 +1,31 @@
 import React from "react";
 
 function TodosList(props) {
+  const [checked, setChecked] = React.useState();
+  const onCheck = (e, i) => {
+    const target = e.target;
+    const value = target.checked;
+    const name = target.name;
+    /* Syntax for multiple inputs
+      is like:
+      setChecked(input1: e.target.value)
+      setChecked(input2: e.target.value)
+      ...
+      It's pretty cool. */
+    setChecked([name]: value);
+  }
   return (
     <div>
       {props.todos.map((todo, i) => (
-        <div key={i}>
+        <div style={{
+          display: 'flex'
+        }} key={i}>
           <div>{todo.value}</div>
-          <div>{todo.id}</div>
           <div onClick={() => props.onDelete(todo.id)}>✖️</div>
-          {/*<input 
-            checked={checked}
-            onChange={toggle} 
+          {/*<input
             type="checkbox"
+            onChange={onCheck}
+            name="input"
             />*/}
         </div>
       ))}
