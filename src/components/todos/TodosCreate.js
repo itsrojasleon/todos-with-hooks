@@ -13,6 +13,7 @@ function TodosCreate(props) {
   };
   return (
     <form onSubmit={handleSubmit}>
+      <div>Add a todo</div>
       <input value={value} onChange={handleChange} type="text" />
     </form>
   );
