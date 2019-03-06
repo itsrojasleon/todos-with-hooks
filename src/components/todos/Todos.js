@@ -5,13 +5,7 @@ import TodosList from "./TodosList";
 import useTodos from "../hooks/useTodos";
 
 function Todos() {
-  const [todos, setTodos] = useTodos();
-  const onSetTodos = todo => {
-    setTodos(todos.concat(todo));
-  };
-  const onDelete = id => {
-    setTodos(todos.filter(todo => todo.id !== id));
-  };
+  const [todos, setTodos, onSetTodos, onDelete] = useTodos();
   return (
     <div>
       <h2>Todos</h2>
