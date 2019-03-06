@@ -6,14 +6,17 @@ import useTodos from "../hooks/useTodos";
 
 function Todos() {
   const [todos, setTodos] = useTodos();
-  const handle = todo => {
+  const onSetTodos = todo => {
     setTodos(todos.concat(todo));
+  };
+  const onDelete = id => {
+    setTodos(todos.filter(todo => todo.id !== id));
   };
   return (
     <div>
       <h2>Todos</h2>
-      <TodosCreate setTodos={handle} />
-      <TodosList todos={todos} />
+      <TodosCreate setTodos={onSetTodos} />
+      <TodosList onDelete={onDelete} todos={todos} />
     </div>
   );
 }

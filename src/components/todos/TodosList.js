@@ -2,11 +2,20 @@ import React from "react";
 
 function TodosList(props) {
   return (
-    <ul>
+    <div>
       {props.todos.map((todo, i) => (
-        <li key={i}>{todo}</li>
+        <div key={i}>
+          <div>{todo.value}</div>
+          <div>{todo.id}</div>
+          <div onClick={() => props.onDelete(todo.id)}>✖️</div>
+          {/*<input 
+            checked={checked}
+            onChange={toggle} 
+            type="checkbox"
+            />*/}
+        </div>
       ))}
-    </ul>
+    </div>
   );
 }
 export default TodosList;
